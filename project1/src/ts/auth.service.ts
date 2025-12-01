@@ -1,27 +1,36 @@
-import type{LoginResponse, LoginData} from "./../interfaces/IloginData";
-import{Http} from "./http.class";
-import{SERVER} from "./constants";
+import type{LoginResponse, LoginData, RegisterData, User} from "./../interfaces/user-interface";
+import{Http} from "./http.class.ts";
+import{SERVER} from "./constants.ts";
 
 export class ServicioAutorizacion {
+
     #http : Http;
 
     constructor() {
-        this.#http = new Http();
+        this.#http = new Http;
     }
 
-    async login( data : LoginData ) : Promise<void> {
-        const respuesta = 
-            await this.#http.post<LoginResponse, LoginData>(SERVER+"/auth/login", data);
+    async Login(data : LoginData) : Promise<void>{
+        const respuesta = await this.#http.post<LoginResponse, LoginData>(
+            SERVER+"/auth/login", data
+        );
         
-        localStorage.setItem("token", respuesta.token);
+        localStorage.setItem("token", respuesta.accessToken) 
     }
 
-    estaLogueado() : boolean {
+    async Register(data: RegisterData) : Promise<User> {
+        const response = await this.#http.post<User, RegisterData>(
+            SERVER+"/auth/register", data
+        );
+        return response
+    }
+
+    comprobarToken() : boolean {
         if(localStorage.getItem("token")) {
-            return true;
+            return true
         }
         else {
-            return false;
+            return false
         }
     }
 

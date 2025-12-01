@@ -1,10 +1,10 @@
 import { ServicioAutorizacion } from "./auth.service";
-import type { LoginData } from "./../interfaces/IloginData";
+import type { LoginData } from "./../interfaces/user-interface";
 
 const autorizacion = new ServicioAutorizacion();
 const formulario = document.getElementById("login-form") as HTMLFormElement;
 
-if(autorizacion.estaLogueado()) {
+if(autorizacion.comprobarToken()) {
     location.assign("index.html");
 }
 else {
@@ -20,7 +20,7 @@ else {
         };
 
         try {
-            await autorizacion.login(loginData);
+            await autorizacion.Login(loginData);
             
             location.assign("index.html");
 
