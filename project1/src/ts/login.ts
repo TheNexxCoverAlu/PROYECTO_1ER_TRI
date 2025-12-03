@@ -1,4 +1,4 @@
-import { ServicioAutorizacion } from "./auth.service";
+import { ServicioAutorizacion } from "./clases/auth.service";
 import type { LoginData } from "./../interfaces/user-interface";
 
 const autorizacion = new ServicioAutorizacion();

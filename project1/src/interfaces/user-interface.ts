@@ -1,8 +1,4 @@
 
-export interface User extends Omit<RegisterData, "confirmPassword"> {
-  ejemplo: string;
-}
-
 export interface LoginData {
   email: string;
   password: string;
@@ -19,15 +15,15 @@ export interface User extends Omit<RegisterData, "Password"> {
 
 export interface LoginResponse {
   accessToken: string;
-}
+}    
 
 export interface UserProfile {
-  nombre: string;
+  name: string;
   email: string;
 }
 
 export interface UserPassword {
-  newPassword: string;
+  password: string;
 }
 
 export interface UserAvatar {

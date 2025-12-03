@@ -1,6 +1,6 @@
 
 import type { RegisterData } from "../interfaces/user-interface.ts";
-import { ServicioAutorizacion } from "./auth.service.ts";
+import { ServicioAutorizacion } from "./clases/auth.service.ts";
 
 const authService = new ServicioAutorizacion();
 const formulario = document.getElementById("register-form") as HTMLFormElement;

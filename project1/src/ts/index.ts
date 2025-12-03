@@ -1,4 +1,4 @@
-import type { PropertiesService } from "./properties.service.ts";
+import type { PropertiesService } from "./clases/properties.service.ts";
 
 const propertiesService = new PropertiesService();
 const propertyListings = document.getElementById("property-listings");

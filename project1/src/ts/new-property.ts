@@ -1,5 +1,5 @@
-import { ProvincesService } from "./provinces.service.js";
-import { PropertiesService } from "./properties.service.js";
+import { ProvincesService } from "./clases/provinces.service.js";
+import { PropertiesService } from "./clases/properties.service.js";
 
 const provincesServices = new ProvincesService();
 const propertiesServices = new PropertiesService();
