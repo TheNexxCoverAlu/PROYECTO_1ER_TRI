@@ -1,4 +1,3 @@
-
 export interface LoginData {
   email: string;
   password: string;
@@ -15,7 +14,7 @@ export interface User extends Omit<RegisterData, "Password"> {
 
 export interface LoginResponse {
   accessToken: string;
-}    
+}
 
 export interface UserProfile {
   name: string;

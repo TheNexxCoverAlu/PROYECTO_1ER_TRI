@@ -1,4 +1,3 @@
-
 export interface Province {
   id: number;
   name: string;
@@ -38,6 +37,9 @@ export interface PropertiesResponse {
   properties: Property[];
   more: boolean;
   page: number;
+}
+export interface ProvincesResponse {
+  provinces: Province[];
 }
 
 export interface Coordinates {

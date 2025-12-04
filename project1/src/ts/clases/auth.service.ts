@@ -1,4 +1,9 @@
-import type { LoginResponse, LoginData, RegisterData, User} from "../../interfaces/user-interface.ts";
+import type {
+  LoginResponse,
+  LoginData,
+  RegisterData,
+  User,
+} from "../interfaces/user-interface.ts";
 import { Http } from "../http.class.ts";
 import { SERVER } from "../constants.ts";
 
@@ -11,8 +16,8 @@ export class ServicioAutorizacion {
 
   async Login(data: LoginData): Promise<void> {
     const respuesta = await this.#http.post<LoginResponse, LoginData>(
-        SERVER + "/auth/login",
-        data
+      SERVER + "/auth/login",
+      data
     );
 
     localStorage.setItem("token", respuesta.accessToken);
