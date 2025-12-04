@@ -1,9 +1,4 @@
-import type {
-  LoginResponse,
-  LoginData,
-  RegisterData,
-  User,
-} from "../../interfaces/user-interface.ts";
+import type { LoginResponse, LoginData, RegisterData, User} from "../../interfaces/user-interface.ts";
 import { Http } from "../http.class.ts";
 import { SERVER } from "../constants.ts";
 
