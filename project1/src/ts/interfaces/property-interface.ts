@@ -29,7 +29,12 @@ export interface Property extends Omit<PropertyInsert, "townId"> {
   createdAt: string;
   status: string;
   town: Towns;
-  seller: number;
+  seller:{
+    id: number;
+    name: string;
+    email: string;
+    avatar: string;
+  };
   mine: boolean;
 }
 
@@ -38,6 +43,11 @@ export interface PropertiesResponse {
   more: boolean;
   page: number;
 }
+
+export interface SinglePropertyRespone {
+  property: Property;
+}
+
 export interface ProvincesResponse {
   provinces: Province[];
 }

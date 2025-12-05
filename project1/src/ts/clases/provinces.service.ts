@@ -4,7 +4,7 @@ import type {
   Province,
   ProvincesResponse,
   Towns,
-} from "../interfaces/property-interface.js";
+} from "../interfaces/property-interface";
 
 export class ProvincesService {
   #http: Http;

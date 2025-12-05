@@ -4,7 +4,8 @@ import type {
   PropertyInsert,
   PropertiesResponse,
   Property,
-} from "../interfaces/property-interface.js";
+  SinglePropertyRespone,
+} from "../interfaces/property-interface";
 
 export class PropertiesService {
   #http: Http;
@@ -20,8 +21,8 @@ export class PropertiesService {
   }
 
   async getPropertyById(id: number): Promise<Property> {
-    const resp = await this.#http.get<Property>(SERVER + "/properties/" + id);
-    return resp;
+    const resp = await this.#http.get<SinglePropertyRespone>(SERVER + "/properties/" + id);
+    return resp.property;
   }
 
   async insertProperty(property: PropertyInsert): Promise<Property> {
